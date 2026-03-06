@@ -67,7 +67,7 @@ export const Select = (props: SelectProps) => {
 						styles.placeholder,
 						(styles as Record<string, string>)[optionClassName]
 					)}
-					data-status={status}
+					// data-status={status}
 					data-selected={!!selected?.value}
 					onClick={handlePlaceHolderClick}
 					role='button'
