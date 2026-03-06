@@ -4,7 +4,10 @@ import clsx from 'clsx';
 
 import { Article } from './components/article/Article';
 import { ArticleParamsForm } from './components/article-params-form/ArticleParamsForm';
-import { ArticleStateType, defaultArticleState } from './constants/articleProps';
+import {
+	ArticleStateType,
+	defaultArticleState,
+} from './constants/articleProps';
 
 import './styles/index.scss';
 import styles from './styles/index.module.scss';
@@ -13,7 +16,7 @@ const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
 
 const App = () => {
-	const [articleState, setArticleState] = useState(defaultArticleState)
+	const [articleState, setArticleState] = useState(defaultArticleState);
 
 	const handleApply = (state: ArticleStateType) => {
 		setArticleState(state);
@@ -35,9 +38,7 @@ const App = () => {
 					'--bg-color': articleState.backgroundColor.value,
 				} as CSSProperties
 			}>
-			<ArticleParamsForm
-				onApply={handleApply} 
-				onReset={handleReset}/>
+			<ArticleParamsForm onApply={handleApply} onReset={handleReset} />
 			<Article />
 		</main>
 	);
